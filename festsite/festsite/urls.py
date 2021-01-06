@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from events.views import home, event
+from django.conf.urls.static import static
+from django.conf import settings
+from .settings import STATIC_URL, STATIC_ROOT
+
+#from programs.views import home
+from programs.views import index, register, event
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
-   # path('event/', event, name='event'),
-    path('event/<int:event_id>',event, name='event')
+    path('', index, name="home"),
+    path('event/<int:event_id>/',event,name='event'),
+    path('register/<int:event_id>/',register,name='register'),
 ]
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    urlpatterns+=static(STATIC_URL, document_root=STATIC_ROOT)
