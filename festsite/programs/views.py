@@ -23,9 +23,9 @@ def register(request,event_id):
         if form.is_valid():
             form.save()
             #return redirect('home')
-            return HttpResponse('/thanks/')
+            return HttpResponse('Registration success')
         else:
-            return HttpResponse('/thaerronks/')
+            return HttpResponse('Registration fails')
             #form = Register()
             #context['form'] = form
     else:
