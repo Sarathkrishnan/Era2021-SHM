@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -14,20 +16,26 @@
 </head>
 
 <body>
-    {% load static %}
+    
   <header>
     <div class="containerfluid bg-secondary">
       <nav class="navbar navbar-light bg-light fixed-top justify-content-center">
 
         <div class="row">
-          <a class="navbar-brand" href="#">
 
 
 
-            {% load static %}
-            <img src="{% static 'logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-            ERA 2021
-          </a>
+          <div class="row">
+            <a class="navbar-brand" href="#">
+
+
+
+
+                <img src="{% static 'logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                ERA 2021
+            </a>
+        </div>
+          
         </div>
 
       </nav>
@@ -50,9 +58,14 @@
          
           <form method="POST">
             {% csrf_token %}
+       
+
+
         
-        
-            <div class="form-group">
+
+            {{ form.as_p }}
+        <button type="submit">Register</button>
+            <!-- <div class="form-group">
               <input type="text" class="form-control" id="fisrtNameInput" placeholder="" value="{{ selected_event.id }} name='event" hidden>
               <label for="exampleFormControlInput1">First Name</label>
               <input type="text" class="form-control" id="fisrtNameInput" placeholder="first name" name='first_name'>
@@ -94,7 +107,7 @@
               <div class="col-sm-8 justify-content-center text-center">
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
               </div>
-            </div>
+            </div> -->
           </form>
           
         </div>

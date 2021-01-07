@@ -20,6 +20,9 @@ def register(request,event_id):
     if request.POST:
         form = Register(request.POST)
         context['form'] = form
+
+  
+
         if form.is_valid():
             form.save()
             #return redirect('home')
