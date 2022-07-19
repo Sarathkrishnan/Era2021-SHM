@@ -1,5 +1,7 @@
 # Era2021-SHM
-SHM college fest event registration website 
+Software pourpose : College fest registration application full source code
+Technologie used  : Django, Html, CSS, JS, Bootstrap
+
 ## Home
 ![Home](screenshots/index.png)
 ## Event details
